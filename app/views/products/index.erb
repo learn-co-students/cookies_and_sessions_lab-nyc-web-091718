@@ -1,0 +1,11 @@
+
+<%= form_tag '/products', method: :post, id: "product" do %>
+  <%= text_field_tag(:product,params[:search],placeholder: "Add to Cart") %>
+  <%= submit_tag id: "add to cart" %>
+<% end %>
+
+<% if @cart %>
+  <% @cart.each do |product|%>
+    <%= product %>
+  <% end %>
+<% end %>
